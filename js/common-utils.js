@@ -17,7 +17,7 @@ export const fullTechProducts = [
     name: "NVIDIA RTX 4090",
     category: "VGA",
     price: 55000000,
-    img: "image/VGA4090.png",
+    img: "image/VGA4090.jpg",
     description:
       "Card đồ họa mạnh mẽ nhất, hiệu suất ray tracing đỉnh cao cho trải nghiệm gaming 4K.",
   },
@@ -26,7 +26,7 @@ export const fullTechProducts = [
     name: "Intel Core i9-14900K",
     category: "CPU",
     price: 15000000,
-    img: "image/IntelCorei914900K.png",
+    img: "image/IntelCorei914900K.jpg",
     description:
       "Bộ xử lý flagship với kiến trúc Hybrid, tối ưu cho đa nhiệm và sáng tạo nội dung.",
   },
@@ -35,7 +35,7 @@ export const fullTechProducts = [
     name: "G.Skill Trident Z5 RGB 32GB",
     category: "RAM",
     price: 4500000,
-    img: "image/GSkillTridentZ5RGB32GB.png",
+    img: "image/GSkillTridentZ5RGB32GB.jpg",
     description:
       "RAM DDR5 tốc độ cao, thiết kế tản nhiệt ánh sáng Neon, tăng cường hiệu năng hệ thống.",
   },
@@ -44,7 +44,7 @@ export const fullTechProducts = [
     name: "Samsung 990 Pro 2TB NVMe",
     category: "SSD",
     price: 6200000,
-    img: "image/Samsung990Pro2TBNVMe.png",
+    img: "image/Samsung990Pro2TBNVMe.jpg",
     description:
       "Ổ cứng NVMe PCIe 4.0, tốc độ đọc/ghi siêu nhanh, giải pháp lưu trữ tối ưu.",
   },
@@ -53,7 +53,7 @@ export const fullTechProducts = [
     name: "Mainboard Z790 AORUS",
     category: "MAINBOARD",
     price: 9800000,
-    img: "image/MainboardZ790AORUS.png",
+    img: "image/MainboardZ790AORUS.jpg",
     description:
       "Bo mạch chủ cao cấp, hỗ trợ ép xung mạnh mẽ, tích hợp Wi-Fi 7 và nhiều cổng kết nối.",
   },
@@ -62,7 +62,7 @@ export const fullTechProducts = [
     name: "Corsair RM1000x Nguồn",
     category: "PSU",
     price: 3500000,
-    img: "image/CorsairRM1000x.png",
+    img: "image/CorsairRM1000x.jpg",
     description:
       "Nguồn máy tính 1000W 80+ Gold, hiệu suất ổn định và cực kỳ yên tĩnh.",
   },
@@ -71,7 +71,7 @@ export const fullTechProducts = [
     name: "Màn hình OLED LG 34 inch",
     category: "MÀN HÌNH",
     price: 28000000,
-    img: "image/OLEDLG34inch.png",
+    img: "image/OLEDLG34inch.jpg",
     description:
       "Màn hình cong OLED với tần số quét 240Hz, màu sắc rực rỡ và độ tương phản tuyệt đối.",
   },
@@ -80,7 +80,7 @@ export const fullTechProducts = [
     name: "Bàn phím cơ Cyber",
     category: "PHỤ KIỆN",
     price: 2500000,
-    img: "image/CyberKey.png",
+    img: "image/CyberKey.jpg",
     description:
       "Bàn phím cơ Blue Switch, thiết kế Cyberpunk với đèn nền RGB rực rỡ.",
   },
@@ -89,7 +89,7 @@ export const fullTechProducts = [
     name: "Webcam 4K Streaming",
     category: "PHỤ KIỆN",
     price: 1800000,
-    img: "image/Webcam4KStreaming.png",
+    img: "image/Webcam4KStreaming.jpg",
     description:
       "Webcam độ phân giải 4K, micro chống ồn, lý tưởng cho livestream chuyên nghiệp.",
   },
@@ -98,7 +98,7 @@ export const fullTechProducts = [
     name: "Tản nhiệt nước AIO 360mm",
     category: "TẢN NHIỆT",
     price: 3900000,
-    img: "image/AIO360mm.png",
+    img: "image/AIO360mm.jpg",
     description:
       "Hệ thống tản nhiệt chất lỏng 3 quạt, giữ cho CPU luôn mát mẻ dưới tải nặng nhất.",
   },
@@ -107,7 +107,7 @@ export const fullTechProducts = [
     name: "VGA Radeon RX 7900 XT",
     category: "VGA",
     price: 25000000,
-    img: "image/VGARadeonRX7900XT.png",
+    img: "image/VGARadeonRX7900XT.jpg",
     description:
       "Card đồ họa hiệu năng cao từ AMD, cạnh tranh sòng phẳng ở phân khúc cao cấp.",
   },
@@ -116,7 +116,7 @@ export const fullTechProducts = [
     name: "Tai nghe Gaming HyperX",
     category: "PHỤ KIỆN",
     price: 1500000,
-    img: "image/GamingHyperX.png",
+    img: "image/GamingHyperX.jpg",
     description:
       "Tai nghe 7.1 Surround Sound, âm thanh rõ nét, micro khử tiếng ồn.",
   },

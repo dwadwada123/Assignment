@@ -1,0 +1,113 @@
+.contact-grid {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.contact-section,
+.geolocation-section {
+    flex: 1;
+    min-width: 45%;
+}
+
+/* Form Liên hệ */
+.form {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 30px;
+    border: 1px solid var(--neon-pink);
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--neon-blue);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+}
+
+.form input[type="text"],
+.form input[type="email"],
+.form textarea {
+    width: 100%;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid var(--grid-line);
+    color: #fff;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form input:focus,
+.form textarea:focus {
+    border-color: var(--neon-pink);
+    box-shadow: 0 0 10px var(--neon-pink);
+    outline: none;
+}
+
+.form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.error-message {
+    color: var(--neon-red);
+    font-size: 13px;
+    margin-top: 5px;
+    text-shadow: 0 0 3px rgba(255, 51, 102, 0.5);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+
+/* Vị trí */
+.geolocation-section {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 30px;
+    border: 1px solid var(--neon-red);
+    box-shadow: 0 0 15px rgba(255, 51, 102, 0.5);
+}
+
+.geo-output {
+    margin-top: 20px;
+    padding: 15px;
+    text-align: center;
+    color: #fff;
+}
+
+#map-placeholder img {
+    opacity: 0.8;
+    margin-top: 15px;
+}
+
+.nearest-store-info {
+    border-top: 1px solid var(--grid-line);
+    margin-top: 20px;
+    padding-top: 20px;
+    color: var(--neon-blue);
+    font-size: 16px;
+    text-align: center;
+}
+
+.nearest-store-info p {
+    margin-bottom: 10px;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+}
+
+.find-btn {
+    display: block;
+    width: 80%;
+    margin: 30px auto 0;
+}

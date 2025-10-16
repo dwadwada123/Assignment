@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYBERTECH</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style-base.css">
+    <link rel="stylesheet" href="css/style-home.css">
+</head>
+
+<body class="body">
+
+    <header class="header">
+        <a href="index.html" class="logo">CYBER <span class="neon-text">TECH</span></a>
+        <nav class="nav">
+            <a href="index.html" class="nav-link active">TRANG CHỦ</a>
+            <a href="product.html" class="nav-link">SẢN PHẨM</a>
+            <a href="cart.html" class="nav-link">GIỎ HÀNG</a>
+            <a href="checkout.html" class="nav-link">THANH TOÁN</a>
+        </nav>
+    </header>
+
+    <section class="holo-slider-container">
+        <div class="holo-slider" id="holo-slider">
+            <div class="holo-slide active-slide" data-index="0">
+                <img src="image/VGA4090CyberEdition.png" alt="VGA 4090 Cyber Edition">
+                <div class="slide-caption">GPU NEON EDITION. Sức Mạnh Tuyệt Đối.</div>
+            </div>
+            <div class="holo-slide" data-index="1">
+                <img src="image/CPU15thGen.png" alt="CPU 15th Gen">
+                <div class="slide-caption">CPU QUANTUM CORE. Tốc Độ Ánh Sáng.</div>
+            </div>
+            <div class="holo-slide" data-index="2">
+                <img src="image/RAMDDR6.png" alt="RAM DDR6">
+                <div class="slide-caption">RAM PHANTOM DDR6. Đa Nhiệm Không Giới Hạn.</div>
+            </div>
+        </div>
+        <button class="slider-control prev-btn">&#9664;</button>
+        <button class="slider-control next-btn">&#9654;</button>
+        <div class="slider-dots" id="slider-dots"></div>
+    </section>
+
+    <section class="flash-sale-banner">
+        <h2 class="section-title neon-text-red">FLASH SALE: Ổ Cứng NVMe GIÁ SỐC!</h2>
+        <div class="countdown-clock" id="countdown-clock">
+            <span id="days">00</span>D :
+            <span id="hours">00</span>H :
+            <span id="minutes">00</span>M :
+            <span id="seconds">00</span>S
+        </div>
+    </section>
+
+    <section class="product-catalogue">
+        <h2 class="section-title">LINH KIỆN ĐỘT PHÁ</h2>
+        <div class="product-grid" id="product-list">
+        </div>
+    </section>
+
+    <footer class="footer">
+        © Trần Vũ Phong - PD11581 - WEB1043
+    </footer>
+
+    <script src="js/common-utils.js" type="module"></script>
+    <script src="js/cart-manager.js" type="module"></script>
+    <script src="js/home.js" type="module"></script>
+</body>
+
+</html>

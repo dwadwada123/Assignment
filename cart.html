@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYBERTECH</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style-base.css">
+    <link rel="stylesheet" href="css/style-cart.css">
+</head>
+
+<body class="body">
+
+    <header class="header">
+        <a href="index.html" class="logo">CYBER <span class="neon-text">TECH</span></a>
+        <nav class="nav">
+            <a href="index.html" class="nav-link">TRANG CHỦ</a>
+            <a href="product.html" class="nav-link">SẢN PHẨM</a>
+            <a href="cart.html" class="nav-link active">GIỎ HÀNG</a>
+            <a href="checkout.html" class="nav-link">THANH TOÁN</a>
+        </nav>
+    </header>
+
+    <section class="cart-section">
+        <h2 class="section-title neon-text-red">KIỂM TRA HỆ THỐNG MUA HÀNG</h2>
+
+        <div class="cart-container">
+            <table class="table" id="cart-table">
+                <thead>
+                    <tr>
+                        <th style="width: 10%;">HÌNH ẢNH</th>
+                        <th style="width: 35%;">LINH KIỆN</th>
+                        <th style="width: 15%;">GIÁ ĐƠN VỊ</th>
+                        <th style="width: 15%;">SỐ LƯỢNG</th>
+                        <th style="width: 15%;">THÀNH TIỀN</th>
+                        <th style="width: 10%;">HÀNH ĐỘNG</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+            <p id="empty-cart-message" class="neon-text-red"
+                style="text-align: center; margin-top: 30px; display: none;">GIỎ HÀNG TRỐNG. VUI LÒNG CHỌN LINH KIỆN.
+            </p>
+
+            <div class="cart-summary">
+                <div class="total-line">
+                    <span>TỔNG CỘNG:</span>
+                    <span id="cart-subtotal" class="neon-text-red">0 VND</span>
+                </div>
+                <div class="total-line">
+                    <span>PHÍ GIAO HÀNG (ESTIMATE):</span>
+                    <span id="shipping-fee" class="neon-text">200.000 VND</span>
+                </div>
+                <div class="total-line grand-total">
+                    <span class="neon-text">TỔNG THANH TOÁN:</span>
+                    <span id="cart-grand-total" class="neon-text-red">0 VND</span>
+                </div>
+            </div>
+
+            <button class="btn checkout-btn">THANH TOÁN <span style="font-size: 1.2em;">&#8594;</span></button>
+        </div>
+
+    </section>
+
+    <footer class="footer">
+        © Trần Vũ Phong - PD11581 - WEB1043
+    </footer>
+
+    <script src="js/common-utils.js" type="module"></script>
+    <script src="js/cart-manager.js" type="module"></script>
+    <script src="js/cart.js" type="module"></script>
+</body>
+
+</html>

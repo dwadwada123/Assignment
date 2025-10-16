@@ -1,0 +1,121 @@
+.cart-section {
+    padding: 20px 40px;
+}
+
+.cart-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--neon-blue);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+/* Bảng Giỏ hàng */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.table th,
+.table td {
+    border: 1px solid var(--grid-line);
+    padding: 12px 10px;
+    text-align: center;
+}
+
+.table thead th {
+    background: rgba(0, 255, 255, 0.1);
+    color: var(--neon-blue);
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+}
+
+.table tbody tr:hover {
+    background: rgba(255, 0, 255, 0.05);
+}
+
+.table img {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border: 1px solid var(--neon-pink);
+}
+
+/* Quản lý số lượng */
+.qty-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.qty-btn {
+    padding: 5px 10px;
+    background: var(--neon-pink);
+    color: var(--bg-dark);
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.qty-btn:hover {
+    background: var(--neon-red);
+}
+
+.qty-display {
+    color: var(--neon-blue);
+    font-weight: bold;
+}
+
+.remove-btn {
+    background: none;
+    color: var(--neon-red);
+    border: 1px solid var(--neon-red);
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.remove-btn:hover {
+    background: var(--neon-red);
+    color: #fff;
+}
+
+/* Tổng cộng */
+.cart-summary {
+    max-width: 400px;
+    margin-left: auto;
+    padding: 20px;
+    border: 2px dashed var(--neon-pink);
+    margin-top: 30px;
+}
+
+.total-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+    font-family: 'Orbitron', sans-serif;
+}
+
+.total-line.grand-total {
+    font-size: 1.3em;
+    font-weight: bold;
+    border-bottom: none;
+    padding-top: 10px;
+}
+
+.checkout-btn {
+    display: block;
+    width: 300px;
+    margin: 30px auto 0;
+    padding: 15px;
+    font-size: 18px;
+    text-align: center;
+}

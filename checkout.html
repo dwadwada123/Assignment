@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYBERTECH</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style-base.css">
+    <link rel="stylesheet" href="css/style-checkout.css">
+</head>
+
+<body class="body">
+
+    <header class="header">
+        <a href="index.html" class="logo">CYBER <span class="neon-text">TECH</span></a>
+        <nav class="nav">
+            <a href="index.html" class="nav-link">TRANG CHỦ</a>
+            <a href="product.html" class="nav-link">SẢN PHẨM</a>
+            <a href="cart.html" class="nav-link">GIỎ HÀNG</a>
+            <a href="checkout.html" class="nav-link active">THANH TOÁN</a>
+        </nav>
+    </header>
+
+    <div class="contact-grid">
+        <section class="contact-section">
+            <h2 class="section-title neon-text-red">XÁC NHẬN THÔNG TIN & MÃ GIẢM GIÁ</h2>
+
+            <form id="CheckoutForm" class="form" novalidate>
+                <h3>THÔNG TIN GIAO HÀNG</h3>
+                <div class="form-group">
+                    <label for="name">HỌ VÀ TÊN <span class="neon-text">*</span></label>
+                    <input type="text" id="name" name="name" placeholder="Tên người nhận">
+                    <div class="error-message" id="errorName"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">EMAIL <span class="neon-text">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="email@domain.com">
+                    <div class="error-message" id="errorEmail"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">SỐ ĐIỆN THOẠI <span class="neon-text">*</span></label>
+                    <input type="text" id="phone" name="phone" placeholder="0XXXXXXXXX">
+                    <div class="error-message" id="errorPhone"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">ĐỊA CHỈ NHẬN HÀNG <span class="neon-text">*</span></label>
+                    <input type="text" id="address" name="address" placeholder="Số nhà, đường, quận/huyện...">
+                    <div class="error-message" id="errorAddress"></div>
+                </div>
+
+                <h3 style="margin-top: 30px;">MÃ GIẢM GIÁ</h3>
+                <div class="form-group coupon-group">
+                    <label for="coupon">MÃ GIẢM GIÁ</label>
+                    <div class="coupon-input-group">
+                        <input type="text" id="coupon" name="coupon" placeholder="Nhập mã giảm giá">
+                        <button type="button" class="btn check-coupon-btn" id="check-coupon-btn">KIỂM TRA</button>
+                    </div>
+                    <div class="error-message neon-text" id="coupon-status" style="margin-top: 5px;"></div>
+                </div>
+
+                <button type="submit" class="btn submit-btn" id="checkout-submit-btn" disabled>
+                    XÁC NHẬN THANH TOÁN
+                </button>
+                <p id="checkout-status-message" class="neon-text-red" style="margin-top: 15px; text-align: center;">Vui
+                    lòng định vị vị trí trước khi thanh toán.</p>
+            </form>
+        </section>
+
+        <section class="geolocation-section">
+            <h2 class="section-title neon-text">TỔNG KẾT ĐƠN HÀNG</h2>
+            <div id="order-summary-details" class="geo-output" style="text-align: right;">
+                <p>Tổng tiền hàng: <span id="checkout-subtotal" class="neon-text-red">0 VND</span></p>
+                <p>Phí giao hàng: <span id="checkout-shipping-fee" class="neon-text">0 VND</span></p>
+                <p>Giảm giá: <span id="checkout-discount" class="neon-text-red">0 VND</span></p>
+                <hr style="border-color: var(--neon-blue); margin: 10px 0;">
+                <p class="grand-total">TỔNG THANH TOÁN: <span id="checkout-grand-total" class="neon-text-red">0
+                        VND</span></p>
+            </div>
+
+            <h2 class="section-title neon-text-red" style="margin-top: 30px;">TÌM CỬA HÀNG GẦN NHẤT</h2>
+            <div id="geo-info" class="geo-output">
+                <p>Bấm kích hoạt định vị để xác nhận vị trí giao hàng.</p>
+                <div id="map-placeholder">
+                    <img src="https://picsum.photos/seed/map/400/250" alt="Cyberpunk Map"
+                        style="width: 100%; height: auto; border: 1px solid var(--neon-blue);">
+                </div>
+            </div>
+
+            <div id="nearest-store" class="nearest-store-info">
+            </div>
+            <button id="find-me-btn" class="btn find-btn">KÍCH HOẠT ĐỊNH VỊ</button>
+        </section>
+    </div>
+
+    <footer class="footer">
+        © Trần Vũ Phong - PD11581 - WEB1043
+    </footer>
+
+    <script src="js/common-utils.js" type="module"></script>
+    <script src="js/cart-manager.js" type="module"></script>
+    <script src="js/checkout.js" type="module"></script>
+</body>
+
+</html>

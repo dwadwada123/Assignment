@@ -1,0 +1,151 @@
+/* Khai báo màu và thiết lập css */
+:root {
+    --bg-dark: #0a0a1a;
+    --neon-blue: #00ffff;
+    --neon-pink: #ff00ff;
+    --neon-red: #ff3366;
+    --grid-line: rgba(0, 255, 255, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Share Tech Mono', monospace;
+    background: var(--bg-dark);
+    color: #ccc;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Hiệu ứng chữ */
+.neon-text {
+    color: var(--neon-blue);
+    text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue), 0 0 20px rgba(0, 255, 255, 0.7);
+}
+
+.neon-text-red {
+    color: var(--neon-red);
+    text-shadow: 0 0 5px var(--neon-red), 0 0 10px var(--neon-red), 0 0 20px rgba(255, 51, 102, 0.7);
+}
+
+.section-title {
+    text-align: center;
+    margin: 40px 0 30px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 30px;
+    letter-spacing: 3px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed var(--grid-line);
+}
+
+/* Header và navbar */
+.header {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--neon-blue);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 2px;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 15px var(--neon-blue);
+}
+
+.nav a {
+    color: #fff;
+    margin-left: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s;
+}
+
+.nav a:hover,
+.nav a.active {
+    color: var(--neon-pink);
+}
+
+.nav a.active::after {
+    content: '';
+    display: block;
+    width: 70%;
+    height: 3px;
+    background: var(--neon-pink);
+    box-shadow: 0 0 8px var(--neon-pink);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: var(--neon-pink);
+    color: var(--bg-dark);
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s;
+    clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
+}
+
+.btn:hover {
+    background: var(--neon-blue);
+    box-shadow: 0 0 15px var(--neon-blue);
+}
+
+/* Hiển thị sản phẩm */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 20px 40px;
+}
+
+.product-info h3 {
+    color: var(--neon-blue);
+    font-size: 18px;
+    margin-bottom: 5px;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+}
+
+.product-info p.price {
+    color: var(--neon-pink);
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    border-top: 1px solid var(--grid-line);
+    font-size: 12px;
+    color: #666;
+    letter-spacing: 1px;
+}

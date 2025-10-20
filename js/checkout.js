@@ -200,7 +200,7 @@ Hệ thống sẽ tiến hành vận chuyển. Giỏ hàng sẽ được xóa.`)
         "geo-info"
       ).innerHTML = `<p>Bấm kích hoạt định vị để xác nhận vị trí giao hàng.</p>
             <div id="map-placeholder">
-                <img src="https://picsum.photos/seed/map/400/250" alt="Cyberpunk Map" style="width: 100%; height: auto; border: 1px solid var(--neon-blue);">
+                <img src="image/map.png" alt="Cyberpunk Map" style="width: 100%; height: auto; border: 1px solid var(--neon-blue);">
             </div>`;
       document.getElementById("nearest-store").innerHTML = "";
     }

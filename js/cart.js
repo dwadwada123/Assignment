@@ -94,9 +94,6 @@ function attachEventListeners(container) {
 // Chuyển sang trang Thanh toán nhấn nút Thanh toán
 function handleCheckoutRedirect(e) {
   e.preventDefault();
-  alert(
-    "Giao dịch đã được khởi tạo! Chuyển sang trang Liên hệ để nhập thông tin đặt hàng..."
-  );
   window.location.href = "checkout.html";
 }
 

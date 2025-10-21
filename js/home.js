@@ -1,9 +1,9 @@
 // Lấy dữ liệu từ common-utils.js và cart-manager.js
-import { fullTechProducts, formatCurrency } from "./common-utils.js";
+import { getProducts, formatCurrency, showCustomAlert } from "./common-utils.js"; 
 import { CartManager } from "./cart-manager.js";
 
 // Chỉ lấy 8 sản phẩm đầu tiên cho trang chủ
-const homePageProducts = fullTechProducts.slice(0, 8);
+const homePageProducts = getProducts().slice(0, 8);
 
 // Hiển thị sản phẩm
 function loadProducts() {
@@ -25,22 +25,22 @@ function loadProducts() {
                 }">THÊM VÀO GIỎ</a>
             </div>
         `;
-
-    // Xử lý sự kiện thêm vào giỏ hàng
-    const addButton = card.querySelector(".add-to-cart-btn");
-    addButton.addEventListener("click", (e) => {
-      e.preventDefault();
-
-      const productId = parseInt(e.currentTarget.dataset.productId);
+    
+    productList.appendChild(card);
+  });
+  
+  productList.addEventListener('click', (e) => {
+    e.preventDefault(); 
+    
+    if (e.target.classList.contains('add-to-cart-btn')) {
+      const productId = parseInt(e.target.dataset.productId);
       const productName = CartManager.addToCart(productId);
 
       if (productName) {
         console.log(`Đã thêm ${productName} vào giỏ hàng.`);
-        alert(`Đã thêm ${productName} vào giỏ hàng!`);
+        showCustomAlert('THÊM THÀNH CÔNG', `Đã thêm ${productName} vào giỏ hàng!`, 'success');
       }
-    });
-
-    productList.appendChild(card);
+    }
   });
 }
 

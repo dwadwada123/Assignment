@@ -1,5 +1,5 @@
 // Lấy key và dữ liệu từ common-utils.js
-import { CART_STORAGE_KEY, fullTechProducts } from "./common-utils.js";
+import { CART_STORAGE_KEY, getProductById } from "./common-utils.js";
 
 // Lấy giỏ hàng từ Local Storage
 function getCart() {
@@ -20,7 +20,7 @@ function calculateSubtotal() {
 // Thêm sản phẩm vào giỏ hàng
 function addToCart(productId) {
   const cart = getCart();
-  const productToAdd = fullTechProducts.find((p) => p.id === productId);
+  const productToAdd = getProductById(productId);
 
   if (!productToAdd) return false;
 

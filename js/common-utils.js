@@ -11,7 +11,7 @@ export function formatCurrency(amount) {
 }
 
 // Dữ liệu sản phẩm
-export const fullTechProducts = [
+const fullTechProducts = [
   {
     id: 1,
     name: "NVIDIA RTX 4090",
@@ -121,3 +121,51 @@ export const fullTechProducts = [
       "Tai nghe 7.1 Surround Sound, âm thanh rõ nét, micro khử tiếng ồn.",
   },
 ];
+
+// Export một hàm trả về mảng
+export function getProducts() {
+  return fullTechProducts;
+}
+
+// Export một hàm trả về sản phẩm theo ID
+export function getProductById(productId) {
+  return fullTechProducts.find((p) => p.id === productId);
+}
+
+export function showCustomAlert(title, message, type = 'success') {
+    const modal = document.getElementById('global-alert-modal');
+    const titleEl = document.getElementById('global-alert-title');
+    const messageEl = document.getElementById('global-alert-message');
+    const closeBtn = document.getElementById('global-alert-close-btn');
+    const modalContent = modal.querySelector('.alert-modal-content');
+
+    // Kiểm tra nếu các element không tồn tại
+    if (!modal || !titleEl || !messageEl || !closeBtn) {
+        // Nếu không tìm thấy, quay lại dùng alert()
+        alert(message);
+        return;
+    }
+
+    // Cập nhật nội dung
+    titleEl.textContent = title;
+    messageEl.textContent = message;
+    
+    // Cập nhật style
+    modalContent.classList.remove('type-success', 'type-error');
+    
+    if (type === 'error') {
+        modalContent.classList.add('type-error');
+        titleEl.className = 'neon-text-red';
+    } else {
+        modalContent.classList.add('type-success');
+        titleEl.className = 'neon-text';
+    }
+
+    // Hiển thị modal
+    modal.style.display = 'flex';
+
+    // Gắn sự kiện đóng
+    closeBtn.onclick = () => {
+        modal.style.display = 'none';
+    };
+}

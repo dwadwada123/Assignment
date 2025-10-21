@@ -1,5 +1,5 @@
 // Lấy dữ liệu từ common-utils.js và cart-manager.js
-import { fullTechProducts, formatCurrency } from "./common-utils.js";
+import { getProducts, getProductById, formatCurrency, showCustomAlert } from "./common-utils.js";
 import { CartManager } from "./cart-manager.js";
 
 // Hiển thị tất cả sản phẩm
@@ -8,8 +8,9 @@ function renderProducts() {
   if (!productCatalogue) return;
 
   productCatalogue.innerHTML = "";
-
-  fullTechProducts.forEach((p) => {
+  
+  // Dùng hàm getProducts()
+  getProducts().forEach((p) => {
     const card = document.createElement("div");
     card.className = "product-card product-item";
     card.setAttribute("data-id", p.id);
@@ -33,29 +34,30 @@ function renderProducts() {
     productCatalogue.appendChild(card);
   });
 
-  attachEventListeners();
+  attachEventListeners(productCatalogue); // Truyền thẻ cha vào
 }
 
 // Thêm sản phẩm vào giỏ hàng và hiển thị thông báo
 function handleAddToCart(productId) {
   const productName = CartManager.addToCart(productId);
   if (productName) {
-    alert(`${productName} đã được thêm vào giỏ hàng!`);
+    showCustomAlert('THÊM THÀNH CÔNG', `${productName} đã được thêm vào giỏ hàng!`, 'success');
   }
 }
 
 // Gắn sự kiện cho các nút
-function attachEventListeners() {
-  const quickViewButtons = document.querySelectorAll(".quick-view-btn");
+function attachEventListeners(productCatalogue) { // Nhận thẻ cha
   const modal = document.getElementById("quick-view-modal");
   const closeBtn = document.querySelector(".close-btn");
   const modalAddToCartBtn = document.getElementById("modal-add-to-cart-btn");
 
-  // Xử lý Xem nhanh
-  quickViewButtons.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      const productId = parseInt(e.target.dataset.id);
-      const product = fullTechProducts.find((p) => p.id === productId);
+  productCatalogue.addEventListener('click', (e) => {
+    const target = e.target;
+    
+    // Kiểm tra xem có phải nút "XEM CHI TIẾT" không
+    if (target.classList.contains('quick-view-btn')) {
+      const productId = parseInt(target.dataset.id);
+      const product = getProductById(productId);
 
       if (product) {
         document.getElementById("modal-name").textContent = product.name;
@@ -69,10 +71,15 @@ function attachEventListeners() {
           product.description;
 
         modalAddToCartBtn.setAttribute("data-id", product.id);
-
         modal.style.display = "block";
       }
-    });
+    }
+    
+    // Kiểm tra xem có phải nút "THÊM VÀO GIỎ" không
+    if (target.classList.contains('add-to-cart-btn')) {
+       const productId = parseInt(target.dataset.id);
+       handleAddToCart(productId);
+    }
   });
 
   closeBtn.addEventListener("click", () => {
@@ -83,14 +90,6 @@ function attachEventListeners() {
     if (e.target === modal) {
       modal.style.display = "none";
     }
-  });
-
-  // Xử lý Thêm vào Giỏ hàng
-  document.querySelectorAll(".product-card .add-to-cart-btn").forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      const productId = parseInt(e.target.dataset.id);
-      handleAddToCart(productId);
-    });
   });
 
   // Xử lý nút Thêm vào giỏ hàng trong modal

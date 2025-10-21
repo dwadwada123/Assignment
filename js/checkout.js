@@ -1,11 +1,11 @@
 // Lấy dữ liệu từ các common-utils và cart-manager
-import { SHIPPING_FEE, formatCurrency } from "./common-utils.js";
+import { SHIPPING_FEE, formatCurrency, showCustomAlert } from "./common-utils.js";
 import { CartManager } from "./cart-manager.js";
 
 // Dữ liệu Mã giảm giá
 const COUPONS = {
-  CYBER20: 200000,
-  TECHNEON: 500000,
+  CYBERTECH: 200000,
+  PHONGDZ: 1000000,
   NEWUSER: 100000,
 };
 
@@ -78,13 +78,10 @@ function renderOrderSummary() {
 
 // Xử lý áp dụng mã giảm giá
 function applyCoupon() {
-  const couponInput = document
-    .getElementById("coupon")
-    .value.trim()
-    .toUpperCase();
+  const couponInput = document.getElementById("coupon").value.trim().toUpperCase();
   const couponStatus = document.getElementById("coupon-status");
   const currentSubtotal = CartManager.calculateSubtotal();
-  currentDiscount = 0; // Reset giảm giá trước khi áp dụng
+  currentDiscount = 0;
 
   if (COUPONS.hasOwnProperty(couponInput)) {
     const discountAmount = COUPONS[couponInput];
@@ -108,84 +105,121 @@ function applyCoupon() {
   renderOrderSummary();
 }
 
-// Khởi tạo xác thực form
+// Khởi tạo kiểm tra form
 function initializeFormValidation() {
   const form = document.getElementById("CheckoutForm");
   const checkCouponBtn = document.getElementById("check-coupon-btn");
+
+  // Lấy các ô input
+  const nameInput = document.getElementById("name");
+  const emailInput = document.getElementById("email");
+  const phoneInput = document.getElementById("phone");
+  const addressInput = document.getElementById("address");
+
+  // Lấy các ô hiển thị lỗi
+  const errorName = document.getElementById("errorName");
+  const errorEmail = document.getElementById("errorEmail");
+  const errorPhone = document.getElementById("errorPhone");
+  const errorAddress = document.getElementById("errorAddress");
 
   if (!form || !checkCouponBtn) return;
 
   checkCouponBtn.addEventListener("click", applyCoupon);
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    let isValid = true;
-    const currentSubtotal = CartManager.calculateSubtotal();
-
-    // Xóa các thông báo lỗi cũ
-    document
-      .querySelectorAll(".error-message")
-      .forEach((el) => (el.textContent = ""));
-
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const address = document.getElementById("address").value.trim();
-
-    // Kiểm tra họ tên
-    if (name === "") {
-      document.getElementById("errorName").textContent =
-        "Lỗi dữ liệu: Họ tên không được để trống";
-      isValid = false;
+  // Hàm kiểm tra Tên
+  function validateName() {
+    const value = nameInput.value.trim();
+    if (value === "") {
+      errorName.textContent = "Họ tên không được để trống";
+      return false;
     }
+    errorName.textContent = "";
+    return true;
+  }
 
-    // Kiểm tra email
+  // Hàm kiểm tra Email
+  function validateEmail() {
+    const value = emailInput.value.trim();
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-    if (email === "" || !emailPattern.test(email)) {
-      document.getElementById("errorEmail").textContent =
-        email === ""
-          ? "Lỗi dữ liệu: Email không được để trống"
-          : "Lỗi định dạng: Email không hợp lệ";
-      isValid = false;
+    if (value === "") {
+      errorEmail.textContent = "Email không được để trống";
+      return false;
     }
+    if (!emailPattern.test(value)) {
+      errorEmail.textContent = "Email không hợp lệ";
+      return false;
+    }
+    errorEmail.textContent = "";
+    return true;
+  }
 
-    // Kiểm tra số điện thoại
+  // Hàm kiểm tra Số điện thoại
+  function validatePhone() {
+    const value = phoneInput.value.trim();
     const phonePattern = /^[0-9]{9,12}$/;
-    if (phone === "" || !phonePattern.test(phone)) {
-      document.getElementById("errorPhone").textContent =
-        phone === ""
-          ? "Lỗi dữ liệu: SĐT không được để trống"
-          : "Lỗi định dạng: SĐT phải từ 9-12 ký tự số";
-      isValid = false;
+    if (value === "") {
+      errorPhone.textContent = "SĐT không được để trống";
+      return false;
     }
-
-    // Kiểm tra địa chỉ
-    if (address.length < 5) {
-      document.getElementById("errorAddress").textContent =
-        "Địa chỉ nhận hàng tối thiểu 10 ký tự";
-      isValid = false;
+    if (!phonePattern.test(value)) {
+      errorPhone.textContent = "SĐT phải từ 9-12 ký tự số";
+      return false;
     }
+    errorPhone.textContent = "";
+    return true;
+  }
 
+  // Hàm kiểm tra Địa chỉ
+  function validateAddress() {
+    const value = addressInput.value.trim();
+    if (value.length < 10) {
+      errorAddress.textContent = "Địa chỉ nhận hàng tối thiểu 10 ký tự";
+      return false;
+    }
+    errorAddress.textContent = "";
+    return true;
+  }
+
+  // Hàm kiểm tra sẽ kích hoạt mỗi khi gõ
+  nameInput.addEventListener("input", validateName);
+  emailInput.addEventListener("input", validateEmail);
+  phoneInput.addEventListener("input", validatePhone);
+  addressInput.addEventListener("input", validateAddress);
+
+  // Giữ nguyên phần kiểm tra khi submit
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); 
+
+    // Chạy tất cả các hàm kiểm tra một lượt cuối cùng
+    const isNameValid = validateName();
+    const isEmailValid = validateEmail();
+    const isPhoneValid = validatePhone();
+    const isAddressValid = validateAddress();
+
+    const currentSubtotal = CartManager.calculateSubtotal();
+    
     // Kiểm tra giỏ hàng
     if (currentSubtotal === 0) {
-      alert("LỖI: Giỏ hàng trống. Không thể thanh toán.");
-      isValid = false;
+      showCustomAlert('LỖI THANH TOÁN', 'Giỏ hàng trống. Không thể thanh toán.', 'error');
+      return; 
     }
 
-    // Nếu tất cả hợp lệ, hiển thị thông tin đơn hàng
-    if (isValid) {
+    // Nếu tất cả đều hợp lệ, thì mới xử lý đơn hàng
+    if (isNameValid && isEmailValid && isPhoneValid && isAddressValid) {
       const finalTotalText = document.getElementById(
         "checkout-grand-total"
       ).textContent;
 
-      alert(`--- GIAO DỊCH HOÀN TẤT ---
-Họ tên: ${name}
-SĐT: ${phone}
-Địa chỉ: ${address}
+      const successMessage = `Họ tên: ${nameInput.value.trim()}
+SĐT: ${phoneInput.value.trim()}
+Địa chỉ: ${addressInput.value.trim()}
 Giảm giá: ${formatCurrency(currentDiscount)}
+
 TỔNG THANH TOÁN CUỐI CÙNG: ${finalTotalText}
 
-Hệ thống sẽ tiến hành vận chuyển. Giỏ hàng sẽ được xóa.`);
+Hệ thống sẽ tiến hành vận chuyển. Giỏ hàng sẽ được xóa.`;
+      
+      showCustomAlert('GIAO DỊCH HOÀN TẤT', successMessage, 'success');
 
       // Xóa Giỏ hàng và reset trạng thái
       CartManager.clearCart();
@@ -193,8 +227,10 @@ Hệ thống sẽ tiến hành vận chuyển. Giỏ hàng sẽ được xóa.`)
       isLocationVerified = false;
       currentDiscount = 0;
       document.getElementById("coupon-status").textContent = "";
-
-      // Cập nhật giao diện
+      errorName.textContent = "";
+      errorEmail.textContent = "";
+      errorPhone.textContent = "";
+      errorAddress.textContent = "";
       renderOrderSummary();
       document.getElementById(
         "geo-info"
@@ -203,6 +239,9 @@ Hệ thống sẽ tiến hành vận chuyển. Giỏ hàng sẽ được xóa.`)
                 <img src="image/map.png" alt="Cyberpunk Map" style="width: 100%; height: auto; border: 1px solid var(--neon-blue);">
             </div>`;
       document.getElementById("nearest-store").innerHTML = "";
+      
+    } else {
+      showCustomAlert('LỖI DỮ LIỆU', 'Vui lòng kiểm tra lại các thông tin còn thiếu hoặc bị sai.', 'error');
     }
   });
 }
@@ -300,7 +339,7 @@ function initializeGeolocation() {
   findMeBtn.addEventListener("click", () => {
     const infoDiv = document.getElementById("geo-info");
     // Thay thế ảnh bằng thông báo quét
-    infoDiv.innerHTML = `<p>Đang quét tín hiệu vệ tinh...</p>`;
+    infoDiv.innerHTML = `<p>Đang quét tín hiệu...</p>`;
 
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(geoSuccess, geoError, {

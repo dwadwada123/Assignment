@@ -141,7 +141,6 @@ export function showCustomAlert(title, message, type = 'success') {
 
     // Kiểm tra nếu các element không tồn tại
     if (!modal || !titleEl || !messageEl || !closeBtn) {
-        // Nếu không tìm thấy, quay lại dùng alert()
         alert(message);
         return;
     }

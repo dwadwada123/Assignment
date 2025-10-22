@@ -10,7 +10,6 @@ export function formatCurrency(amount) {
   return amount.toLocaleString("vi-VN") + " VND";
 }
 
-// Dữ liệu sản phẩm
 const fullTechProducts = [
   {
     id: 1,
@@ -19,7 +18,7 @@ const fullTechProducts = [
     price: 55000000,
     img: "image/VGA4090.jpg",
     description:
-      "Card đồ họa mạnh mẽ nhất, hiệu suất ray tracing đỉnh cao cho trải nghiệm gaming 4K.",
+      "Card đồ họa mạnh mẽ nhất với kiến trúc Ada Lovelace, 24GB GDDR6X VRAM. Trải nghiệm hiệu suất ray tracing đỉnh cao cho gaming 4K mượt mà và các tác vụ AI. Tích hợp DLSS 3 cho khả năng xử lý hình ảnh vượt trội. Đây là lựa chọn tối thượng cho mọi game thủ và nhà sáng tạo nội dung chuyên nghiệp.",
   },
   {
     id: 2,
@@ -28,7 +27,7 @@ const fullTechProducts = [
     price: 15000000,
     img: "image/IntelCorei914900K.jpg",
     description:
-      "Bộ xử lý flagship với kiến trúc Hybrid, tối ưu cho đa nhiệm và sáng tạo nội dung.",
+      "Bộ xử lý flagship với 24 nhân (8 P-core + 16 E-core) và 32 luồng. Tần số turbo tối đa lên đến 6.0 GHz, mở khóa hiệu năng tối đa cho hệ thống của bạn. Kiến trúc Hybrid tiên tiến tối ưu cho đa nhiệm nặng, streaming và sáng tạo nội dung 8K.",
   },
   {
     id: 3,
@@ -37,7 +36,7 @@ const fullTechProducts = [
     price: 4500000,
     img: "image/GSkillTridentZ5RGB32GB.jpg",
     description:
-      "RAM DDR5 tốc độ cao, thiết kế tản nhiệt ánh sáng Neon, tăng cường hiệu năng hệ thống.",
+      "Kit RAM DDR5 32GB (2x16GB) bus 6000MHz. Thiết kế tản nhiệt nhôm phay xước với dải LED RGB Neon, hỗ trợ XMP 3.0. Tăng cường băng thông và giảm độ trễ, hoàn hảo cho các hệ thống gaming cao cấp và ép xung (overclocking).",
   },
   {
     id: 4,
@@ -46,7 +45,7 @@ const fullTechProducts = [
     price: 6200000,
     img: "image/Samsung990Pro2TBNVMe.jpg",
     description:
-      "Ổ cứng NVMe PCIe 4.0, tốc độ đọc/ghi siêu nhanh, giải pháp lưu trữ tối ưu.",
+      "Ổ cứng SSD NVMe M.2 2TB, chuẩn PCIe 4.0. Tốc độ đọc/ghi tuần tự lên đến 7,450/6,900 MB/s. Giải pháp lưu trữ tối ưu cho gaming và các ứng dụng chuyên nghiệp, giảm thời gian tải game và khởi động hệ thống chỉ trong vài giây.",
   },
   {
     id: 5,
@@ -55,7 +54,7 @@ const fullTechProducts = [
     price: 9800000,
     img: "image/MainboardZ790AORUS.jpg",
     description:
-      "Bo mạch chủ cao cấp, hỗ trợ ép xung mạnh mẽ, tích hợp Wi-Fi 7 và nhiều cổng kết nối.",
+      "Bo mạch chủ cao cấp socket LGA 1700, hỗ trợ CPU Intel thế hệ 12, 13 và 14. Thiết kế VRM mạnh mẽ, hỗ trợ ép xung mạnh mẽ, tích hợp Wi-Fi 7 và LAN 2.5GbE. Nhiều khe cắm M.2 PCIe 5.0 và hệ thống tản nhiệt M.2 tiên tiến.",
   },
   {
     id: 6,
@@ -64,7 +63,7 @@ const fullTechProducts = [
     price: 3500000,
     img: "image/CorsairRM1000x.jpg",
     description:
-      "Nguồn máy tính 1000W 80+ Gold, hiệu suất ổn định và cực kỳ yên tĩnh.",
+      "Nguồn máy tính 1000W, đạt chuẩn 80+ Gold, Full Modular. Cung cấp hiệu suất ổn định và cực kỳ yên tĩnh nhờ quạt tản nhiệt từ tính. Tụ điện Nhật Bản cao cấp đảm bảo độ bền bỉ và an toàn cho toàn bộ hệ thống của bạn.",
   },
   {
     id: 7,
@@ -73,7 +72,7 @@ const fullTechProducts = [
     price: 28000000,
     img: "image/OLEDLG34inch.jpg",
     description:
-      "Màn hình cong OLED với tần số quét 240Hz, màu sắc rực rỡ và độ tương phản tuyệt đối.",
+      "Màn hình cong UltraWide™ 34 inch tỷ lệ 21:9. Công nghệ tấm nền OLED với tần số quét 240Hz, thời gian phản hồi 0.03ms. Màu sắc rực rỡ, độ tương phản tuyệt đối và màu đen hoàn hảo, mang lại trải nghiệm HDR đắm chìm.",
   },
   {
     id: 8,
@@ -82,7 +81,7 @@ const fullTechProducts = [
     price: 2500000,
     img: "image/CyberKey.jpg",
     description:
-      "Bàn phím cơ Blue Switch, thiết kế Cyberpunk với đèn nền RGB rực rỡ.",
+      "Bàn phím cơ Blue Switch cho cảm giác gõ 'clicky' đặc trưng. Thiết kế Cyberpunk độc đáo với keycap PBT xuyên LED. Hệ thống đèn nền RGB 16.8 triệu màu có thể tùy chỉnh qua phần mềm, khung kim loại chắc chắn.",
   },
   {
     id: 9,
@@ -91,7 +90,7 @@ const fullTechProducts = [
     price: 1800000,
     img: "image/Webcam4KStreaming.jpg",
     description:
-      "Webcam độ phân giải 4K, micro chống ồn, lý tưởng cho livestream chuyên nghiệp.",
+      "Webcam độ phân giải 4K 30fps (hoặc 1080p 60fps), lý tưởng cho livestream chuyên nghiệp. Cảm biến cao cấp cho hình ảnh sắc nét ngay cả trong điều kiện thiếu sáng. Tích hợp micro kép chống ồn và lấy nét tự động bằng AI.",
   },
   {
     id: 10,
@@ -100,7 +99,7 @@ const fullTechProducts = [
     price: 3900000,
     img: "image/AIO360mm.jpg",
     description:
-      "Hệ thống tản nhiệt chất lỏng 3 quạt, giữ cho CPU luôn mát mẻ dưới tải nặng nhất.",
+      "Hệ thống tản nhiệt chất lỏng 3 quạt ARGB 120mm. Mặt bơm (pump) thiết kế vô cực (infinity mirror) ấn tượng. Giữ cho CPU luôn mát mẻ dưới tải nặng nhất, đồng bộ LED với mainboard qua các chuẩn ARGB phổ biến.",
   },
   {
     id: 11,
@@ -109,7 +108,7 @@ const fullTechProducts = [
     price: 25000000,
     img: "image/VGARadeonRX7900XT.jpg",
     description:
-      "Card đồ họa hiệu năng cao từ AMD, cạnh tranh sòng phẳng ở phân khúc cao cấp.",
+      "Card đồ họa hiệu năng cao từ AMD với kiến trúc RDNA 3, 20GB GDDR6 VRAM. Cạnh tranh sòng phẳng ở phân khúc cao cấp, hỗ trợ công nghệ AMD FSR 3.0 và ray tracing. Lựa chọn tuyệt vời cho gaming 1440p và 4K.",
   },
   {
     id: 12,
@@ -118,16 +117,16 @@ const fullTechProducts = [
     price: 1500000,
     img: "image/GamingHyperX.jpg",
     description:
-      "Tai nghe 7.1 Surround Sound, âm thanh rõ nét, micro khử tiếng ồn.",
+      "Tai nghe 7.1 Surround Sound giả lập, mang lại âm thanh rõ nét và định vị chính xác. Mút tai nghe bọc da mềm mại, khung thép bền bỉ. Micro khử tiếng ồn có thể tháo rời, tương thích đa nền tảng (PC, Console).",
   },
 ];
 
-// Export một hàm trả về mảng
+// Export dữ liệu thông qua hàm
 export function getProducts() {
   return fullTechProducts;
 }
 
-// Export một hàm trả về sản phẩm theo ID
+// Export dữ liệu theo ID qua hàm
 export function getProductById(productId) {
   return fullTechProducts.find((p) => p.id === productId);
 }
@@ -139,31 +138,26 @@ export function showCustomAlert(title, message, type = 'success') {
     const closeBtn = document.getElementById('global-alert-close-btn');
     const modalContent = modal.querySelector('.alert-modal-content');
 
-    // Kiểm tra nếu các element không tồn tại
     if (!modal || !titleEl || !messageEl || !closeBtn) {
         alert(message);
         return;
     }
 
-    // Cập nhật nội dung
     titleEl.textContent = title;
     messageEl.textContent = message;
     
-    // Cập nhật style
     modalContent.classList.remove('type-success', 'type-error');
     
     if (type === 'error') {
         modalContent.classList.add('type-error');
-        titleEl.className = 'neon-text-red';
+        titleEl.className = 'neon-text-red'; 
     } else {
         modalContent.classList.add('type-success');
-        titleEl.className = 'neon-text';
+        titleEl.className = 'neon-text'; 
     }
 
-    // Hiển thị modal
     modal.style.display = 'flex';
 
-    // Gắn sự kiện đóng
     closeBtn.onclick = () => {
         modal.style.display = 'none';
     };

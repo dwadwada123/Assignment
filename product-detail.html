@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYBERTECH - Chi Tiết</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style-base.css">
+    <link rel="stylesheet" href="css/style-product-detail.css">
+</head>
+
+<body class="body">
+
+    <header class="header">
+        <a href="index.html" class="logo">CYBER <span class="neon-text">TECH</span></a>
+        <nav class="nav">
+            <a href="index.html" class="nav-link">TRANG CHỦ</a>
+            <a href="product.html" class="nav-link active">SẢN PHẨM</a> <a href="cart.html" class="nav-link">GIỎ
+                HÀNG</a>
+            <a href="checkout.html" class="nav-link">THANH TOÁN</a>
+            <a href="faq.html" class="nav-link">FAQ</a>
+        </nav>
+    </header>
+
+    <section class="detail-section">
+        <div class="detail-container" id="product-detail-container">
+            <div class="detail-img-container">
+                <img id="detail-img" src="image/placeholder.png" alt="Loading product...">
+            </div>
+            <div class="detail-info">
+                <h2 id="detail-name" class="neon-text-red">Đang tải...</h2>
+                <p class="detail-category">Loại: <span id="detail-category">...</span></p>
+                <p class="detail-price" id="detail-price">...</p>
+                <p class="detail-desc" id="detail-desc">...</p>
+
+                <button id="detail-add-to-cart-btn" class="btn">THÊM VÀO GIỎ</button>
+                <a href="product.html" class="btn btn-secondary">QUAY LẠI DANH SÁCH</a>
+            </div>
+        </div>
+        <div id="product-not-found" style="display: none; text-align: center;">
+            <h2 class="section-title neon-text-red">LỖI 404</h2>
+            <p>Không tìm thấy linh kiện bạn yêu cầu. Vui lòng quay lại trang sản phẩm.</p>
+            <a href="product.html" class="btn" style="margin-top: 20px;">QUAY LẠI</a>
+        </div>
+    </section>
+
+    <div id="global-alert-modal" class="alert-modal">
+        <div class="alert-modal-content">
+            <h3 id="global-alert-title" class="neon-text"></h3>
+            <p id="global-alert-message"></p>
+            <button id="global-alert-close-btn" class="btn">ĐÓNG</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        © Trần Vũ Phong - PD11581 - WEB1043
+    </footer>
+
+    <script src="js/common-utils.js" type="module"></script>
+    <script src="js/cart-manager.js" type="module"></script>
+    <script src="js/product-detail.js" type="module"></script>
+</body>
+
+</html>

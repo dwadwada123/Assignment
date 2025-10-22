@@ -104,3 +104,31 @@
     width: 100%;
     padding: 15px 0;
 }
+
+/* Thanh tìm kiếm */
+.search-container {
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+}
+
+.search-input {
+    width: 100%;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid var(--neon-blue);
+    color: #fff;
+    font-size: 16px;
+    font-family: 'Share Tech Mono', monospace;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    text-align: left;
+}
+
+.search-input::placeholder {
+    color: #888;
+}
+
+.search-input:focus {
+    border-color: var(--neon-pink);
+    box-shadow: 0 0 15px var(--neon-pink);
+    outline: none;
+}

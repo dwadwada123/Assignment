@@ -26,6 +26,12 @@
 
     <section class="product-catalogue">
         <h2 class="section-title neon-text">TOÀN BỘ LINH KIỆN</h2>
+
+        <div class="search-container">
+            <input type="text" id="product-search-input" class="search-input"
+                placeholder="Tìm kiếm linh kiện (ví dụ: VGA, CPU...)">
+        </div>
+
         <div class="product-grid full-catalogue" id="full-product-catalogue">
         </div>
     </section>
@@ -39,8 +45,7 @@
                 <div class="modal-details">
                     <p><strong>Loại:</strong> <span id="modal-category"></span></p>
                     <p class="modal-price"><strong>Giá:</strong> <span id="modal-price"></span> VND</p>
-                    <p class="modal-description">Đây là mô tả chi tiết của sản phẩm. <br> Tần số xung nhịp cao, hiệu
-                        suất vượt trội cho các tác vụ nặng.</p>
+                    <p class="modal-description" id="modal-description"></p>
                     <button class="btn add-to-cart-btn" id="modal-add-to-cart-btn">THÊM VÀO GIỎ</button>
                 </div>
             </div>
